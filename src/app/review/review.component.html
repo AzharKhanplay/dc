@@ -1,0 +1,21 @@
+<section class="reviews_sec">
+<div class="heading w3-center">
+  <h2>Reviews</h2>
+  <p>Lorem Ipusm Dolor sit amet constorcutor. Lorem Ipusm dbla blab bla lorem ipusm dolor.</p>
+</div>
+<div class="container">
+<owl-carousel-o [options]="ReviewsCarouselOptions">
+<ng-container *ngFor="let r of Reviews">
+ <ng-template carouselSlide>
+  <div class="review_box">
+    <div class="stars"><mat-icon>star</mat-icon><mat-icon>star</mat-icon><mat-icon>star</mat-icon><mat-icon>star</mat-icon><mat-icon>star</mat-icon></div>
+    <div class="info">
+      <p>{{r.content}}</p>
+    </div>
+    <h4>{{r.name}} <span>{{r.location}}</span></h4>
+  </div>
+</ng-template>
+</ng-container>
+</owl-carousel-o>
+</div>
+</section>

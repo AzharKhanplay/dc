@@ -1,0 +1,23 @@
+.reviews_sec{
+  background-color: #f7f4f2;
+  color: #000;
+
+  .review_box{
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    .stars{
+        color: #f44336;
+    }
+    h4{
+        font-size: 20px;
+        line-height: 24px;
+        span{
+            display: block;
+            font-size: 16px;
+            line-height: 20px;
+        }
+    }
+  }
+
+}

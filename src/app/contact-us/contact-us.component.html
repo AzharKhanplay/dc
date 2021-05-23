@@ -1,0 +1,53 @@
+<section class="contact_sec" id="contact_us">
+ <div class="container">
+   <div class="heading w3-center">
+     <h2>Contact Us</h2>
+   </div>
+   <div class="contact_form">
+      <form class="example-form">
+        <div class="w3-row p">
+        <div class="w3-col l4">
+        <mat-form-field class="full-width" >
+            <mat-label>Name</mat-label>
+            <input type="text" matInput [formControl]="nameFormControl" [errorStateMatcher]="matcher"
+                   placeholder="John">
+            <mat-error *ngIf="nameFormControl.hasError('required')">
+              Name is <strong>required</strong>
+            </mat-error>
+        </mat-form-field>
+        </div>
+        <div class="w3-col l4">
+        <mat-form-field class="full-width">
+          <mat-label>Email</mat-label>
+          <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+                 placeholder="abc@example.com">
+          <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
+            Please enter a valid email address
+          </mat-error>
+          <mat-error *ngIf="emailFormControl.hasError('required')">
+            Email is <strong>required</strong>
+          </mat-error>
+        </mat-form-field>
+        </div>
+        <div class="w3-col l4">
+        <mat-form-field class="full-width">
+            <mat-label>Phone</mat-label>
+            <input type="tel" matInput [formControl]="phoneFormControl" [errorStateMatcher]="matcher"
+                   placeholder="John">
+        </mat-form-field>
+        </div>
+        <div class="w3-col s12">
+          <mat-form-field class="full-width">
+            <mat-label>Message</mat-label>
+            <textarea matInput></textarea>
+          </mat-form-field>
+        </div>
+        </div>
+        
+        <div class="submit_btn w3-center">
+          <button type="submit" mat-flat-button color="primary">Submit</button>
+        </div>
+      </form>  
+   </div>
+ </div> 
+</section>
