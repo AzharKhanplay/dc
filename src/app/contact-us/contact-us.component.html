@@ -4,12 +4,12 @@
      <h2>Contact Us</h2>
    </div>
    <div class="contact_form">
-      <form class="example-form">
+      <form #contactForm="ngForm" (ngSubmit)="submit(contactForm)">
         <div class="w3-row p">
         <div class="w3-col l4">
         <mat-form-field class="full-width" >
             <mat-label>Name</mat-label>
-            <input type="text" matInput [formControl]="nameFormControl" [errorStateMatcher]="matcher"
+            <input type="text" name="name" matInput [formControl]="nameFormControl" [errorStateMatcher]="matcher"
                    placeholder="John">
             <mat-error *ngIf="nameFormControl.hasError('required')">
               Name is <strong>required</strong>
@@ -19,7 +19,7 @@
         <div class="w3-col l4">
         <mat-form-field class="full-width">
           <mat-label>Email</mat-label>
-          <input type="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
+          <input type="email" name="email" matInput [formControl]="emailFormControl" [errorStateMatcher]="matcher"
                  placeholder="abc@example.com">
           <mat-error *ngIf="emailFormControl.hasError('email') && !emailFormControl.hasError('required')">
             Please enter a valid email address
@@ -31,15 +31,15 @@
         </div>
         <div class="w3-col l4">
         <mat-form-field class="full-width">
-            <mat-label>Phone</mat-label>
-            <input type="tel" matInput [formControl]="phoneFormControl" [errorStateMatcher]="matcher"
-                   placeholder="John">
+            <mat-label>Link of files (If any)</mat-label>
+            <input type="text" name="link" matInput [formControl]="linkFormControl" [errorStateMatcher]="matcher"
+                   placeholder="https://www.something/com/files">
         </mat-form-field>
         </div>
         <div class="w3-col s12">
           <mat-form-field class="full-width">
             <mat-label>Message</mat-label>
-            <textarea matInput></textarea>
+            <textarea matInput name="message"></textarea>
           </mat-form-field>
         </div>
         </div>

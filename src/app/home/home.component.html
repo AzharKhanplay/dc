@@ -27,14 +27,14 @@
     </div>
     <div class="w3-row p">
       <div class="w3-col m6 l3" *ngFor="let service of HomeServices">
-       <a [routerLink]="[service.route]" class="service_box">
+       <a [routerLink]="['/services/'+service.route]" class="service_box">
         <mat-card>
         <img mat-card-image [src]="service.thumb" [alt]="service.title">
         <mat-card-content class="service_info-">
           <mat-card-title>{{service.title}}</mat-card-title>
           <p>{{service.description}}</p>
           <div class="w3-center">
-            <button mat-stroked-button color="warn">Let's Connect</button>
+            <button mat-stroked-button color="warn" [routerLink]="['/services/'+service.route]">Read More</button>
           </div>
         </mat-card-content>
         </mat-card>

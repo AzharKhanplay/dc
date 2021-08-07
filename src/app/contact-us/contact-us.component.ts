@@ -29,9 +29,14 @@ export class ContactUsComponent implements OnInit {
     Validators.required,
     Validators.email,
   ]);
-  phoneFormControl = new FormControl('', [
+  linkFormControl = new FormControl('', [
     //none
   ]);
   matcher = new MyErrorStateMatcher();
+  
+  submit(contactForm:any) {
+    console.log('Form Submitted', contactForm);
+  }
+
 }
 
