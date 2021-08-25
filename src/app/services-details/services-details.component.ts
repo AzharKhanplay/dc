@@ -22,7 +22,7 @@ export class ServicesDetailsComponent implements OnInit {
   ngOnInit() {
     //alert(this.route.snapshot.paramMap.get('url'));
     this.getService();
-  }
+  };
   
   getService(){
     const route_ = String(this.route.snapshot.paramMap.get('url'));
@@ -31,10 +31,4 @@ export class ServicesDetailsComponent implements OnInit {
     //alert(this.service);
   };
 
-  handleClick(){
-    //alert(this.service?.title);
-    this.getService();
-  }
-  
-
-}
+};

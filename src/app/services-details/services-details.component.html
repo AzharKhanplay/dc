@@ -1,7 +1,6 @@
-<p>services-details works!</p>
 {{getService()}}
-<button (click)="handleClick()">Load Service</button>
-<section *ngIf="service">
+<div *ngIf="service">
+<section>
  <div class="banner">
   <img [src]="service.thumb" [alt]="service.title" /> 
  </div>
@@ -16,3 +15,4 @@
   </div>
  </div>
 </section>
+</div> 
