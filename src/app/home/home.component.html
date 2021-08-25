@@ -26,7 +26,7 @@
       <h2>Services we Provide</h2>
     </div>
     <div class="w3-row p">
-      <div class="w3-col m6 l3" *ngFor="let service of HomeServices">
+     <div class="w3-col m6 l3" *ngFor="let service of HomeServices">
        <a [routerLink]="['/services/'+service.route]" class="service_box">
         <mat-card>
         <img mat-card-image [src]="service.thumb" [alt]="service.title">

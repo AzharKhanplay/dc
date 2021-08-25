@@ -1,21 +1,24 @@
-
 import { Component, OnInit, Input } from '@angular/core';
 
 import { OwlOptions } from 'ngx-owl-carousel-o';
 
-import {AllServices} from '../services.service';
+import { Service } from './../service';
+import { AllServices } from '../services.service';
 
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss'],
-  providers: [AllServices]
+  styleUrls: ['./home.component.scss']
 })
+
 export class HomeComponent implements OnInit {
+
+  HomeServices: Service[] = [];
 
   constructor(private services: AllServices) { }
 
   ngOnInit(): void {
+    this.getAllServices();
   }
 
   customOptions: OwlOptions = {
@@ -35,7 +38,9 @@ export class HomeComponent implements OnInit {
   ];
   
   //HomeServices: string[] = [];
-
-  HomeServices = this.services.services;
+  getAllServices(): void{
+    this.services.getServices()
+    .subscribe(services => this.HomeServices = services);
+  }
 
 }

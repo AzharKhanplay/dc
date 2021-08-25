@@ -1,1 +1,18 @@
 <p>services-details works!</p>
+{{getService()}}
+<button (click)="handleClick()">Load Service</button>
+<section *ngIf="service">
+ <div class="banner">
+  <img [src]="service.thumb" [alt]="service.title" /> 
+ </div>
+</section>
+<section>
+ <div class="container">
+  <div class="services_heading w3-center w3-padding-24">
+   <h2>{{service.title}}</h2>
+  </div>
+  <div>
+   <p>{{service.description}}</p>
+  </div>
+ </div>
+</section>
