@@ -1,32 +1,30 @@
-<section class="contact_sec" id="contact_us">
+
+<!-- <section class="contact_sec" id="contact_us">
  <div class="container">
    <div class="heading w3-center">
      <h2>Contact Us</h2>
    </div>
-   <div class="contact_form">
-    <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/shell.js"></script>
-    <script>
-      hbspt.forms.create({
-      region: "eu1",
-      portalId: "25497460",
-      formId: "8063fa3c-24c2-4cf3-bf5d-bdcbac497fdf"
-    });
-    </script>
-   </div>
-<!--    
+
+   
    <div class="contact_form">
       <form [formGroup]="contactform" (ngSubmit)="submit()" #contact_Form>
         <div class="w3-row p">
-        <div class="w3-col l4">
+        <div class="w3-col l6">
         <mat-form-field class="full-width" >
-            <mat-label>Name</mat-label>
-            <input type="text" formControlName="name" #name matInput placeholder="John">
+            <mat-label>First Name</mat-label>
+            <input type="text" formControlName="firstname" #name matInput placeholder="John">
             <mat-error *ngIf="name.oninvalid">
-              Name is <strong>required</strong>
+              First Name is <strong>required</strong>
             </mat-error>
         </mat-form-field>
         </div>
-        <div class="w3-col l4">
+        <div class="w3-col l6">
+          <mat-form-field class="full-width" >
+              <mat-label>Last Name</mat-label>
+              <input type="text" formControlName="lastname" #name matInput placeholder="Doe">
+          </mat-form-field>
+          </div>
+        <div class="w3-col l6">
         <mat-form-field class="full-width">
           <mat-label>Email</mat-label>
           <input type="email" formControlName="email" #email matInput
@@ -39,10 +37,10 @@
           </mat-error>
         </mat-form-field>
         </div>
-        <div class="w3-col l4">
+        <div class="w3-col l6">
         <mat-form-field class="full-width">
             <mat-label>Link of files (If any)</mat-label>
-            <input type="url" formControlName="link" matInput placeholder="https://www.something/com/files">
+            <input type="url" formControlName="link_of_files__if_any_" matInput placeholder="https://www.something/com/files">
         </mat-form-field>
         </div>
         <div class="w3-col s12">
@@ -51,6 +49,7 @@
             <textarea matInput formControlName="message"></textarea>
           </mat-form-field>
         </div>
+         <input type="hidden" formControlName="hutk" value=""/>
         </div>
         
         <div class="submit_btn w3-center">
@@ -58,6 +57,6 @@
         </div>
       </form>  
    </div>
-    -->
+  
  </div> 
-</section>
+</section> -->

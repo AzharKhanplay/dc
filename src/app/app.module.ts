@@ -27,6 +27,7 @@ import { ReviewComponent } from './review/review.component';
 
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { ServicesDetailsComponent } from './services-details/services-details.component';
+import { ContactFormComponent } from './contact-form/contact-form.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ServicesDetailsComponent } from './services-details/services-details.co
     ContactUsComponent,
     ReviewComponent,
     ServicesDetailsComponent,
+    ContactFormComponent,
 
   ],
   imports: [

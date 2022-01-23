@@ -28,23 +28,41 @@ export class ContactUsComponent implements OnInit {
 
   
   contactform = new FormGroup({
-    name: new FormControl('', [ Validators.required ]),
+    firstname: new FormControl('', [ Validators.required ]),
+    lastname: new FormControl(''),
     email: new FormControl('', [
       Validators.required,
       Validators.email,
      ]),
-     link: new FormControl(''),
-     message: new FormControl('')
+     link_of_files__if_any_: new FormControl(''),
+     message: new FormControl(''),
+     hutk: new FormControl('')
    });
    
   //matcher = new MyErrorStateMatcher();
   
   submit() {
-    console.log('Form Submitted', this.contactform.value);
-    this.http.post('http://localhost:5000', this.contactform.value).subscribe(
-       (res) => console.log(res),
+    const formData = this.contactform.value;
+    
+     const data = {
+       "fields": [
+         { "name": "firstname", "value": formData.firstname },
+         { "name": "lastname", "value": formData.lastname },
+         { "name": "email", "value": formData.email },
+         { "name": "link_of_files__if_any_", "value": formData.link_of_files__if_any_ },
+         { "name": "message", "value": formData.message },
+         { "name": "hutk", "value": formData.hutk }
+       ]
+     }
+
+      //const formData = this.contactform.value;
+      //console.log('Form Submitted', formData);
+    if(formData.firstname != '' || formData.email != ''){
+     this.http.post('https://api.hsforms.com/submissions/v3/integration/submit/25497460/8063fa3c-24c2-4cf3-bf5d-bdcbac497fdf', data).subscribe(
+       (response) => alert(response),
        (error) => console.log(error)
-    );
+     );
+    }
   }
 
 }

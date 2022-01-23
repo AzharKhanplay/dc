@@ -1,26 +1,27 @@
 
-<!-- {{  getService() }} -->
+{{  getService() }}
 
 <div *ngIf="service">
-<section style="padding: 0;">
+<section style="padding: 0;text-align: center;">
   <div class="banner">
 <!-- <div *ngFor="let s of getSlides" class="banner">
   <img [src]="s.src" [alt]="s.title"/>
 </div> -->
  
-  <!--<img [src]="service.slides[0].src" [alt]="service.slides[0].title">-->
+  <img [src]="service.thumb" [alt]="service.title">
 
- <owl-carousel-o [options]="customOptions" #owlBanner>
+ <!-- <owl-carousel-o [options]="customOptions" #owlBanner>
    <ng-container *ngFor="let slide of service.slides">
     <ng-template CarouselSlide let-owlBanner>
      <img [src]="slide.src" [alt]="slide.title">
     </ng-template>
   </ng-container>
- </owl-carousel-o>
+ </owl-carousel-o> -->
+
 </div>
 </section>
 
-<section>
+<section style="text-align: center;">
  <div class="container">
   <div class="services_heading w3-center w3-padding-24">
    <h2>{{service.title}}</h2>
