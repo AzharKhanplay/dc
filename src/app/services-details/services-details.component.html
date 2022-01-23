@@ -1,10 +1,25 @@
-{{getService()}}
+
+<!-- {{  getService() }} -->
+
 <div *ngIf="service">
-<section>
- <div class="banner">
-  <img [src]="service.thumb" [alt]="service.title" /> 
- </div>
+<section style="padding: 0;">
+  <div class="banner">
+<!-- <div *ngFor="let s of getSlides" class="banner">
+  <img [src]="s.src" [alt]="s.title"/>
+</div> -->
+ 
+  <!--<img [src]="service.slides[0].src" [alt]="service.slides[0].title">-->
+
+ <owl-carousel-o [options]="customOptions" #owlBanner>
+   <ng-container *ngFor="let slide of service.slides">
+    <ng-template CarouselSlide let-owlBanner>
+     <img [src]="slide.src" [alt]="slide.title">
+    </ng-template>
+  </ng-container>
+ </owl-carousel-o>
+</div>
 </section>
+
 <section>
  <div class="container">
   <div class="services_heading w3-center w3-padding-24">
@@ -15,4 +30,10 @@
   </div>
  </div>
 </section>
+
 </div> 
+<div *ngIf="!service">
+  This services is not available
+</div>
+
+<app-review></app-review>

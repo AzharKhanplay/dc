@@ -4,4 +4,5 @@ export interface Service{
   title: String;
   thumb: String;
   description: String;
+  slides: any;
 } 

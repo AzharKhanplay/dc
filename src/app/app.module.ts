@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -39,7 +40,6 @@ import { ServicesDetailsComponent } from './services-details/services-details.co
     ContactUsComponent,
     ReviewComponent,
     ServicesDetailsComponent,
-    
 
   ],
   imports: [
@@ -56,9 +56,10 @@ import { ServicesDetailsComponent } from './services-details/services-details.co
     FormsModule,
     ReactiveFormsModule,
     MatFormFieldModule,
+    HttpClientModule
   ],
   exports: [
-  
+    
   ],
   providers: [ ],
   bootstrap: [AppComponent]
