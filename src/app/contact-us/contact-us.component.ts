@@ -59,7 +59,7 @@ export class ContactUsComponent implements OnInit {
       //console.log('Form Submitted', formData);
     if(formData.firstname != '' || formData.email != ''){
      this.http.post('https://api.hsforms.com/submissions/v3/integration/submit/25497460/8063fa3c-24c2-4cf3-bf5d-bdcbac497fdf', data).subscribe(
-       (response) => alert(response),
+       (response) => alert(JSON.stringify(response)),
        (error) => console.log(error)
      );
     }
